@@ -28,6 +28,10 @@ router.get('/docs', async () => {
   return AutoSwagger.default.ui('/swagger', swagger)
 })
 
+// Leaderboards
+const LeaderboardsController = () => import('#controllers/leaderboards_controller')
+router.get('/leaderboard', [LeaderboardsController, 'index'])
+
 // Users
 const UsersController = () => import('#controllers/users_controller')
 
